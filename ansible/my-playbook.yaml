@@ -23,7 +23,7 @@
           - openssl        # OpenSSL (often already present but good to ensure)
         state: present
         update_cache: yes  # Update package cache before installing
-        use_backend: dnf   # Explicitly use dnf for Amazon Linux
+        
 
     - name: Add ec2-user to docker group (if not root, assuming 'ec2-user')
       # This step is crucial if you want a non-root user to run docker commands
