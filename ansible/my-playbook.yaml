@@ -13,7 +13,8 @@
         - docker
         - openssl
       update_cache: yes
-      state: present   
+      state: present
+      use_backend: dnf   
   - name: Install compatible version of urllib3, docker-compose, and Docker Python package
     ansible.builtin.pip:
       name:
