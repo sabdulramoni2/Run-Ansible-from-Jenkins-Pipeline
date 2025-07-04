@@ -1,0 +1,26 @@
+---
+- name: Install python3, docker, docker-compose, urllib3, and openssl
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+  - name: Install python3, docker, and openssl
+    vars:
+      ansible_python_interpreter: /usr/bin/python
+    ansible.builtin.yum:
+      name: 
+        - python3
+        - docker
+        - openssl
+      update_cache: yes
+      state: present   
+  - name: Install compatible version of urllib3, docker-compose, and Docker Python package
+    ansible.builtin.pip:
+      name:
+        - urllib3==1.26.7
+        - docker-compose
+        - docker
+  - name: Start Docker daemon
+    ansible.builtin.systemd:
+      name: docker
+      state: started
