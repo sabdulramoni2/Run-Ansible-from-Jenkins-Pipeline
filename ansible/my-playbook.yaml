@@ -1,62 +1,32 @@
 ---
-- name: Configure EC2 instances for Docker and Python
+- name: Install Docker
   hosts: all
-  become: true # Run all tasks with sudo privileges
-  gather_facts: true # Strongly recommended to gather facts for system detection
-
-  # Set ansible_python_interpreter at the playbook level or in inventory
-  # For Amazon Linux, '/usr/bin/python3' is typically the correct path after installing python3
-  # If '/usr/bin/python3' isn't a direct executable, Ansible will search the PATH for 'python3'
-  # It's safest to ensure python3 is installed via yum first, then rely on this.
-  # For Amazon Linux 2023, 'python3' is generally default.
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-
+  become: yes
   tasks:
-    - name: Ensure Python 3 and essential development tools are installed via dnf/yum
-      ansible.builtin.package: # Use 'package' module as it auto-selects yum/dnf/apt
-        name:
-          - python3        # Python 3 interpreter
-          - python3-pip    # Essential for pip module
-          - python3-devel  # Often needed for Python packages with C extensions
-          - docker         # Docker daemon and client
-          - openssl        # OpenSSL (often already present but good to ensure)
+    - name: Install Docker
+      yum:
+        name: docker
+        update_cache: yes
         state: present
-        update_cache: yes  # Update package cache before installing
-        
-
-    - name: Add ec2-user to docker group (if not root, assuming 'ec2-user')
-      # This step is crucial if you want a non-root user to run docker commands
-      # without needing sudo. If you only run as root, you can skip this.
-      ansible.builtin.user:
-        name: ec2-user # Change to your actual non-root user if different
-        groups: docker
-        append: true
-      when: ansible_user != 'root' # Only run if not connecting as root initially
-
-    - name: Start and enable Docker daemon
-      ansible.builtin.systemd:
+    - name: Start docker daemon
+      systemd:
         name: docker
         state: started
-        enabled: true # Ensure Docker starts on boot
 
-    # Note on docker-compose:
-    # If using Docker Engine v20.10.0 or later, 'docker compose' (without hyphen)
-    # is often included as a Docker CLI plugin when installing 'docker' via yum.
-    # If you still need the standalone 'docker-compose' Python package (older style),
-    # then include it here. Otherwise, it might not be necessary.
-    - name: Install compatible version of urllib3 and Docker Python package for Ansible
-      ansible.builtin.pip:
-        name:
-          - urllib3==1.26.7 # Pinning for specific compatibility, otherwise remove ==version
-          - docker          # Python client for Docker daemon
-        state: present
-        # If your Ansible is on Python 2, or you need to specify the pip binary:
-        # executable: /usr/bin/pip3 # Or /usr/bin/python3 -m pip
-        # It should typically use the ansible_python_interpreter automatically
-
-    # If you *definitely* need the standalone docker-compose via pip:
-    # - name: Install standalone docker-compose via pip
-    #   ansible.builtin.pip:
-    #     name: docker-compose
-    #     state: present
+- name: Install Docker-compose
+  hosts: all
+  become: yes 
+  become_user: ashiwaju
+  tasks:
+    - name: Create docker-compose directory
+      file:
+        path: ~/.docker/cli-plugins
+        state: directory
+    - name: Get architecture of remote machine
+      shell: uname -m
+      register: remote_arch
+    - name: Install docker-compose
+      get_url:
+        url: "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-{{remote_arch.stdout}}"
+        dest: ~/.docker/cli-plugins/docker-compose
+        mode: +x
