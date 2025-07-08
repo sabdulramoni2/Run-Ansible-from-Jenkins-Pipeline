@@ -1,4 +1,4 @@
-﻿# ** Run Ansible from Jenkins Pipeline**
+﻿# **Run Ansible from Jenkins Pipeline**
 
 ## **Project Overview**
 This project demonstrates how to execute ansible playbook from a jenkins pipeline.
