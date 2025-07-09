@@ -45,7 +45,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     python3 -c "import boto3"
     python3 -c "import botocore"
     ```
--![image](https://github.com/user-attachments/assets/81ff8b91-2411-47ca-825d-ffdb1980fce2)
+  ![image](https://github.com/user-attachments/assets/81ff8b91-2411-47ca-825d-ffdb1980fce2)
 
 - Configure AWS credentials on the Ansible server
       1. Create .aws folder in the root directory
@@ -62,6 +62,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
       ```
   
   
+  ![image](https://github.com/user-attachments/assets/c7ffeefa-a769-47ce-a2b7-c745d6a6f724)
 
 
 
