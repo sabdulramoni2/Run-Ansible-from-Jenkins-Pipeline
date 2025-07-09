@@ -106,7 +106,11 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 
     ![image](https://github.com/user-attachments/assets/853c4e4e-92b1-406a-b25c-280995060aa2)
 
-          
+      - As Jenkins only understands the classic format (e.g. header and footer with RSA PRIVATE KEY), the private SSH key will need to be converted. Enter the following command in PowerShell to convert the private SSH to the classic format
+
+          ```
+              ssh-keygen -p -f .ssh/id_rsa -m pem -P ""-N ""
+          ```
     
 
 
