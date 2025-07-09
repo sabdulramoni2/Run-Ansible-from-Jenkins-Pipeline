@@ -129,9 +129,9 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     ![image](https://github.com/user-attachments/assets/22c022d9-e91d-430c-9b20-542a5bd951ad)
 
 - Is the "Pipeline: Stage View" plugin installed?
-      •	This plugin is usually installed by default with recent Jenkins installations, but it's worth checking.
-      •	Go to Manage Jenkins -> Plugins.
-      •	On the Installed tab, search for "Pipeline: Stage View". Ensure it's listed and enabled. If not, go to the Available tab, search for it, and install it.
+      --  This plugin is usually installed by default with recent Jenkins installations, but it's worth checking.
+      --  Go to Manage Jenkins -> Plugins.
+      --  On the Installed tab, search for "Pipeline: Stage View". Ensure it's listed and enabled. If not, go to the Available tab, search for it, and install it.
 
 
     ![image](https://github.com/user-attachments/assets/ca2dc751-d3e6-47ad-8ad1-ce00e020a943)
