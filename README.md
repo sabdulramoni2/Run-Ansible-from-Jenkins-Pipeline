@@ -112,10 +112,38 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
             ```
                 ssh-keygen -p -f .ssh/id_rsa -m pem -P ""-N ""
             ```
-    
+- When prompted for the new passphrase, leave it empty by pressing Enter. When prompted to reenter the passphrase, press Enter again. The following output will display:    
 
 
-      
+    ![image](https://github.com/user-attachments/assets/a8215ced-397d-48b6-925a-d41624d66e6a)
+    ![image](https://github.com/user-attachments/assets/70b9ccfc-c977-4e00-9220-d97e63a94d2d)
+    ![image](https://github.com/user-attachments/assets/35d8fbd8-57a7-4057-b8d7-d08dea7f7b55)
+    ![image](https://github.com/user-attachments/assets/15a66c9d-08b9-485f-bf2a-50f7a823fe02)
+
+- Jenkins Pipeline Creation/Execution
+
+    ![image](https://github.com/user-attachments/assets/eec93778-4298-4283-af81-c33fc85f9bf4)
+    ![image](https://github.com/user-attachments/assets/ac97f481-a60d-4e34-8d1c-ab223743ce85)
+    ![image](https://github.com/user-attachments/assets/3f1e3953-a1ed-450d-b4da-8b75d7e0c815)
+    ![image](https://github.com/user-attachments/assets/8fc45d8d-8b75-4ace-97d5-713fa6dd0ea3)
+    ![image](https://github.com/user-attachments/assets/22c022d9-e91d-430c-9b20-542a5bd951ad)
+
+- Is the "Pipeline: Stage View" plugin installed?
+      •	This plugin is usually installed by default with recent Jenkins installations, but it's worth checking.
+      •	Go to Manage Jenkins -> Plugins.
+      •	On the Installed tab, search for "Pipeline: Stage View". Ensure it's listed and enabled. If not, go to the Available tab, search for it, and install it.
+
+
+    ![image](https://github.com/user-attachments/assets/ca2dc751-d3e6-47ad-8ad1-ce00e020a943)
+
+
+
+
+
+
+
+
+
 
     
 
