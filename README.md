@@ -75,6 +75,11 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
   ![image](https://github.com/user-attachments/assets/7d5fcfd0-1189-4c10-bd10-24f07a811bb3)
   ![image](https://github.com/user-attachments/assets/2de5422d-6567-4b33-bb9a-ffe21018c686)
 
+- Ansible Configuration Files
+     - This section will create an Ansible configuration file, a dynamic inventory file, and an Ansible playbook.
+
+    ![image](https://github.com/user-attachments/assets/d8cff644-767e-47cb-8497-b473d1df56e3)
+
 
 
 
