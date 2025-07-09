@@ -47,6 +47,21 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     ```
 -![image](https://github.com/user-attachments/assets/81ff8b91-2411-47ca-825d-ffdb1980fce2)
 
+- Configure AWS credentials on the Ansible server
+      1. Create .aws folder in the root directory
+      2. cd into the directory
+      3. create files called "credentials" into the directory.
+      4. Copy the aws credentials from your user directory and paste into the server
+
+      ```
+            Pwd
+            mkdir .aws
+            cd .aws
+            vim credentials
+            type .aws/credentials
+      ```
+  
+  
 
 
 
