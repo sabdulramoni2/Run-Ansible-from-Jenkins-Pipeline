@@ -92,15 +92,15 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     ![image](https://github.com/user-attachments/assets/9db5632a-7554-417b-a4e3-f9ac5152ba68)
   
 - Ansible Server Key Credentials
-      - This section will store the Ansible server key credentials inside the Jenkins credentials store
+- This section will store the Ansible server key credentials inside the Jenkins credentials store
   
     ![image](https://github.com/user-attachments/assets/3b0495dc-7d93-42d4-811a-ec600557bc24)
     ![image](https://github.com/user-attachments/assets/4c80851d-5b92-4fb1-9d2a-fd9c4211b648)
     ![image](https://github.com/user-attachments/assets/98664849-2a69-4e4e-816b-e2fc53cec520)
 
   
-      - Open PowerShell and type the following command to display the local workstation’s SSH private key.
-      - Notice the header and footer are in the new OpenSSH format.
+- Open PowerShell and type the following command to display the local workstation’s SSH private key.
+- Notice the header and footer are in the new OpenSSH format.
   
             ```  ~/.ssh/id_rsa
             ```
@@ -109,9 +109,9 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 
       - As Jenkins only understands the classic format (e.g. header and footer with RSA PRIVATE KEY), the private SSH key will need to be converted. Enter the following command in PowerShell to convert the private SSH to the classic format
 
-          ```
-              ssh-keygen -p -f .ssh/id_rsa -m pem -P ""-N ""
-          ```
+            ```
+                ssh-keygen -p -f .ssh/id_rsa -m pem -P ""-N ""
+            ```
     
 
 
