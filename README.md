@@ -32,6 +32,20 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
   ![image](https://github.com/user-attachments/assets/5f8da30e-73b7-45e5-ae79-52da781f1703)
 
 
+- Install ansible on digital ocean server
+  
+- Created ansible server form previous lesson
+  ![image](https://github.com/user-attachments/assets/e5fda6af-14e1-4290-a223-73ffb4da7ba4)
+  
+- Install python dependencies
+  ```python3 -c "import boto3"
+     python3 -c "import botocore"
+  ```
+-![image](https://github.com/user-attachments/assets/81ff8b91-2411-47ca-825d-ffdb1980fce2)
+
+
+
+
 
 
 
