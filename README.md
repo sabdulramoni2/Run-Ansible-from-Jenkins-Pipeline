@@ -92,13 +92,10 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     ![image](https://github.com/user-attachments/assets/9db5632a-7554-417b-a4e3-f9ac5152ba68)
   
 - Ansible Server Key Credentials
-      - This section will store the Ansible server key credentials inside the Jenkins credentials store.
-      - On the Manage Jenkins screen, under the Security section, click Credentials.  
-      ![image](https://github.com/user-attachments/assets/3b0495dc-7d93-42d4-811a-ec600557bc24)
-
-      - On the Global credentials (unrestricted) screen, click the + Add Credentials button.
-
-      ![image](https://github.com/user-attachments/assets/4c80851d-5b92-4fb1-9d2a-fd9c4211b648)
+      - This section will store the Ansible server key credentials inside the Jenkins credentials store
+  
+        ![image](https://github.com/user-attachments/assets/3b0495dc-7d93-42d4-811a-ec600557bc24)
+        ![image](https://github.com/user-attachments/assets/4c80851d-5b92-4fb1-9d2a-fd9c4211b648)
 
       
 
