@@ -65,6 +65,24 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
   ![image](https://github.com/user-attachments/assets/c7ffeefa-a769-47ce-a2b7-c745d6a6f724)
 
 
+- Create 2 AWS EC2 instances and create key pair
+  
+  ![image](https://github.com/user-attachments/assets/7fadc810-b3b5-4a38-8f37-5c0cfa40c3e1)
+  ![image](https://github.com/user-attachments/assets/ba24be38-e52c-4055-b101-2accbf89c776)
+  ![image](https://github.com/user-attachments/assets/05b04f4e-1507-42ee-8d5f-84528d35bd8f)
+  ![image](https://github.com/user-attachments/assets/4fb18b01-d3af-4262-8bbd-810cd5121191)
+  ![image](https://github.com/user-attachments/assets/4ea33af8-e584-4dfc-9d82-c068772a284e)
+  ![image](https://github.com/user-attachments/assets/7d5fcfd0-1189-4c10-bd10-24f07a811bb3)
+  ![image](https://github.com/user-attachments/assets/2de5422d-6567-4b33-bb9a-ffe21018c686)
+
+
+
+
+
+  
+
+
+
 
 
 
