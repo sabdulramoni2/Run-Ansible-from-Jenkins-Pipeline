@@ -38,6 +38,9 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
   ![image](https://github.com/user-attachments/assets/e5fda6af-14e1-4290-a223-73ffb4da7ba4)
   
 - Install python dependencies
+- Dependencies already installed
+- Use the commnad below to confirmed
+  
     ```python3 -c "import boto3"
        python3 -c "import botocore"
     ```
