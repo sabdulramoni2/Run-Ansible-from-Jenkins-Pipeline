@@ -99,7 +99,9 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     ![image](https://github.com/user-attachments/assets/98664849-2a69-4e4e-816b-e2fc53cec520)
 
       - Open PowerShell and type the following command to display the local workstation’s SSH private key.
+  
       - Notice the header and footer are in the new OpenSSH format.
+  
           ```
                 ~/.ssh/id_rsa
           ```
