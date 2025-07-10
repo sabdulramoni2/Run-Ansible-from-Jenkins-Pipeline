@@ -187,6 +187,17 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
       - Prior to writing the final stage of the Jenkins pipeline, the SSH Pipeline Steps Plugin must be installed in Jenkins. Once installed, the Jenkinsfile will be updated to add the “execute ansible playbook” stage. The pipeline will then be executed, validated,            and optimized
         <img width="975" height="299" alt="image" src="https://github.com/user-attachments/assets/15218c41-67cb-4956-a72c-1c7c343f1cac" />
 
+     - Jenkinsfile
+         -  Restore the ansible-jenkins project in Microsoft Visual Studio Code and open the Jenkinsfile. At the same indentation level as the “copy files to ansible server” stage, create a new individual stage block named “execute ansible playbook.”
+             ```
+                  stage("execute ansible playbook") {
+
+                     }
+            ```
+
+         -  In the “execute ansible playbook” stage block, create nested steps and script blocks as shown below:
+         -  In the script block, display output to the user that the Ansible Playbook is being called to configure the EC2 instances:
+
 
       
 
