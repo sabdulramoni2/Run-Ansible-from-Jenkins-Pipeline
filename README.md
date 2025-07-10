@@ -77,6 +77,8 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 
 - Ansible Configuration Files
      - This section will create an Ansible configuration file, a dynamic inventory file, and an Ansible playbook.
+       -  Open the ansible-jenkins project in Microsoft Visual Studio Code. Click the icon to create a new folder. Name the folder “ansible.”
+       -  Create 3 new files inside the ansible folder: (1) ansible.cfg, (2) inventory_aws_ec2.yaml, and (3) my-playbook.yaml.
 
     ![image](https://github.com/user-attachments/assets/d8cff644-767e-47cb-8497-b473d1df56e3)
 
