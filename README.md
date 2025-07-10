@@ -290,7 +290,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
         <img width="975" height="432" alt="image" src="https://github.com/user-attachments/assets/0348ca54-86b8-439a-bde3-8335539c2a0f" />
 
   - Jenkins Pipeline Optimization
-     Two optimizations will be applied to the Jenkins pipeline. First, since the Ansible server IP appears three times in Jenkinsfile, the Ansible server IP will be converted to an environment variable. Converting to an environment variable will make it so the Ansible      server IP address only has to be changed in one place moving forward. Second, a bash script will be used to automate the installation of Ansible and the Python-related packages for new server builds in the future.
+    - Two optimizations will be applied to the Jenkins pipeline. First, since the Ansible server IP appears three times in Jenkinsfile, the Ansible server IP will be converted to an environment variable. Converting to an environment variable will make it so the              Ansible server IP address only has to be changed in one place moving forward. Second, a bash script will be used to automate the installation of Ansible and the Python-related packages for new server builds in the future.
     
     -  Environment Variable: Ansible Server IP
           - In this section, the Ansible Server IP will be converted to an environment variable.
