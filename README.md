@@ -196,6 +196,15 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
             ```
 
          -  In the “execute ansible playbook” stage block, create nested steps and script blocks as shown below:
+             ```
+                    stage("execute ansible playbook") {
+                         steps {
+                              script {
+                              }
+                           }
+                         }
+             ```
+
          -  In the script block, display output to the user that the Ansible Playbook is being called to configure the EC2 instances:
 
 
