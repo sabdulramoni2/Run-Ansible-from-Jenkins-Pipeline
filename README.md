@@ -7,8 +7,6 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
   
 ## **Feature**
 
-### **EKS provisioning using Terraform**
-
 - Install jenkins on digital ocean server
 - Install ansible on digital ocean server
 - Execute Ansible playbook from jenklins pipeline to configure 2 EC2 instances.
