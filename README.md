@@ -113,7 +113,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
                 ssh-keygen -p -f .ssh/id_rsa -m pem -P ""-N ""
             ```
 -  Where:
-  -f = path to the private key
+-  f = path to the private key
         -m = the file extension
         P = old passphrase
         N = new passphrase
