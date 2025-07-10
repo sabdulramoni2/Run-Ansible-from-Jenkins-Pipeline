@@ -144,7 +144,17 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 
     ![image](https://github.com/user-attachments/assets/ca2dc751-d3e6-47ad-8ad1-ce00e020a943)
 
+
   
+   
+- Pipeline Validation & Security Optimization
+   - This section will validate the “copy files to ansible server” stage copied the ansible folder and private EC2 SSH key to the server. This section will also provide an optimization to the Jenkinsfile. Open PowerShell and SSH into the Ansible server. Issue an ls         command to confirm the ansible folder contents and the private EC2 SSH key exist:
+    - Files on ansible host
+     <img width="975" height="156" alt="image" src="https://github.com/user-attachments/assets/f288477f-09c2-4128-aa50-341b08174224" />
+
+
+    
+
 
 
 
