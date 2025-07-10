@@ -236,15 +236,35 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 
           <img width="522" height="635" alt="image" src="https://github.com/user-attachments/assets/c916341a-aedf-42d4-8f04-552884ffdc0a" />
 
+       - Once again, scroll to the withCredentials example in the Examples section. Copy the circled keys and associated values to the clipboard.
+           <img width="624" height="329" alt="image" src="https://github.com/user-attachments/assets/ac5aa5ba-6df1-4293-8791-40205e77f5eb" />
 
+           
+      - Inside the withCredentials block, paste the user and identityFile keys from the clipboard. Make the following adjustments:- Change the user key’s value to user to match the usernameVariable in the withCredentials statement- Change the identityFile key’s value          to keyfile to match the keyFileVariable in the withCredentials statement.
+        These changes are summarized as follows:
 
+          ```
+                 remote.user = user
+                 remote.identityFile = keyfile
+          ````
 
-
+      - Inside the withCredentials block and under the identityFile key, add the following line to run the ls -l command
+          ```
+                 sshCommand remote: remote, command: "ls -l"
+          ```
+        Note: The ls -l command is for testing purposes and will be changed later.
+ 
+        <img width="975" height="269" alt="image" src="https://github.com/user-attachments/assets/14e5efd7-b599-4c3f-9c53-1b6bc20e2962" />
 
     
+      - Open a terminal in Microsoft Visual Studio code. Use the git command to add the changes, specify a commit message, and push to the GitHub repository.
 
 
-
+          ```
+                   git add .
+                   git commit -m "Add remote execution"
+                   git push
+          ```
 
 
 
