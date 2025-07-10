@@ -284,12 +284,57 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
                git push
         ```
 
-        
+      - Restore the Jenkins management UI and rerun the ansible-pipeline job. Confirm the build is successful:
+        <img width="975" height="518" alt="image" src="https://github.com/user-attachments/assets/81ffad72-7f6b-4653-94c6-0b194531ff1d" />
+        <img width="975" height="658" alt="image" src="https://github.com/user-attachments/assets/d4a03845-1c47-4da7-9c87-3f54065a9c12" />
+        <img width="975" height="432" alt="image" src="https://github.com/user-attachments/assets/0348ca54-86b8-439a-bde3-8335539c2a0f" />
 
+  - Jenkins Pipeline Optimization
+     Two optimizations will be applied to the Jenkins pipeline. First, since the Ansible server IP appears three times in Jenkinsfile, the Ansible server IP will be converted to an environment variable. Converting to an environment variable will make it so the Ansible      server IP address only has to be changed in one place moving forward. Second, a bash script will be used to automate the installation of Ansible and the Python-related packages for new server builds in the future.
+    
+    -  Environment Variable: Ansible Server IP
+          - In this section, the Ansible Server IP will be converted to an environment variable.
+            In Microsoft Visual Studio Code, restore the Jenkinsfile in the ansible-jenkins project. Notice the Ansible server IP appears three times – twice in the “copy files to ansible server” stage and once in the “execute ansible playbook” stage.
+            Create an environment block between the agent any and stages block as show below
 
+            ```
+                   pipeline {
+                       agent any
+                       environment {
+                       }
+                        stages {
+                         }
+                     }
+            ```
 
+          - Inside the environment block, create a variable called ANSIBLE_SERVER and assign the Ansible server IP address as the value
 
+            ```
+                   ANSIBLE_SERVER = "x.x.x.x"
+            ```
+          - In the “copy files to ansible server” stage, locate the sshagent block where the SSH Agent plugin is used. Replace the Ansible IP with ${ANSIBLE_SERVER} as shown here:       
 
+            ```
+                   sh "scp -o StrictHostKeyChecking=no ansible/* root@${ANSIBLE_SERVER}:/root"
+            ```
+            
+          - In the “copy files to ansible server” stage, locate the withCredentials block where the Credentials Binding plugin is used. Replace the Ansible IP with $ANSIBLE_SERVER. Recall the curvy brackets and double quotes cannot be used here to prevent the Jenkins              pipeline from showing the secret in the command history.
+            ```
+                   sh 'scp $keyfile root@$ANSIBLE_SERVER:/root/ssh-key.pem'
+            ```
+          - In the “execute ansible playbook” stage, locate the script block. Replace the value of the remote.host key with the value of ANSIBLE_SERVER as shown here:
+            ```
+                   remote.host = ANSIBLE_SERVER
+            ```
+         - In the terminal pane of Microsoft Visual Studio Code, use the git command to add the changes, specify a commit message, and push to the GiHub repository.
+           ```
+                 git add .
+                 git commit -m "Create ansible server env var"
+                 git push
+           ```
+
+         - Return to the Jenkins management UI and rerun the ansible-pipeline job. Confirm the build is successful:
+           <img width="975" height="576" alt="image" src="https://github.com/user-attachments/assets/04cf0479-26be-4b06-ba9f-1a730cb7cfea" />
 
 
 
