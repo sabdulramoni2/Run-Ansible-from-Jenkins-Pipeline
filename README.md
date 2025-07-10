@@ -153,7 +153,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
      <img width="975" height="156" alt="image" src="https://github.com/user-attachments/assets/f288477f-09c2-4128-aa50-341b08174224" />
 
    - Inside the Jenkins management UI, navigate to the Dashboard. Click inside the ansible-pipeline job
-   - In the left pane, click on build #.
+   - In the left pane, click on build #8.
    - Notice the security warning below:
      <img width="975" height="424" alt="image" src="https://github.com/user-attachments/assets/9b538646-4e7c-4f14-8fac-ec3809144856" />
      <img width="975" height="72" alt="image" src="https://github.com/user-attachments/assets/4e2dffcf-02cd-474f-933e-54135c7960d0" />
@@ -166,16 +166,28 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
      ```
 
 
+   - Open a terminal inside Microsoft Visual Studio code. Use the git command to add the changes, add a commit message, and push to the GitLab repository
+
+
+    ```
+        git add .
+        git commit -m "Fix security warning for .pem file"
+        git push
+    ```
 
 
 
-    
+    - Return to the Jenkins management UI. On the Pipeline ansible-pipeline screen, click Build Now to rerun the Jenkins pipeline. The second build is successful
+      <img width="975" height="554" alt="image" src="https://github.com/user-attachments/assets/f65ec294-3daa-4a4d-b26b-9e4383f975f2" />
+      - Click on Status in the left menu and confirm the security warning is resolved.
+        <img width="975" height="427" alt="image" src="https://github.com/user-attachments/assets/372083a3-d93e-4422-9af7-b935e5f42ce1" />
+        <img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/c95d1119-515e-4206-aa4f-621765290871" />
+
+      
 
 
 
-
-
-
+      
 
 
 
