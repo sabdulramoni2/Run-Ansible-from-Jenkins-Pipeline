@@ -152,6 +152,14 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
     - Files on ansible host
      <img width="975" height="156" alt="image" src="https://github.com/user-attachments/assets/f288477f-09c2-4128-aa50-341b08174224" />
 
+   - Inside the Jenkins management UI, navigate to the Dashboard. Click inside the ansible-pipeline job
+   - In the left pane, click on build #.
+   - Notice the security warning below:
+     <img width="975" height="424" alt="image" src="https://github.com/user-attachments/assets/9b538646-4e7c-4f14-8fac-ec3809144856" />
+     <img width="975" height="72" alt="image" src="https://github.com/user-attachments/assets/4e2dffcf-02cd-474f-933e-54135c7960d0" />
+
+
+
 
     
 
