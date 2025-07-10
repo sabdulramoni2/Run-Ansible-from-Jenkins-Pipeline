@@ -183,6 +183,11 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
         <img width="975" height="427" alt="image" src="https://github.com/user-attachments/assets/372083a3-d93e-4422-9af7-b935e5f42ce1" />
         <img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/c95d1119-515e-4206-aa4f-621765290871" />
 
+  -  CI/CD Stage: Execute Ansible Playbook
+      - Prior to writing the final stage of the Jenkins pipeline, the SSH Pipeline Steps Plugin must be installed in Jenkins. Once installed, the Jenkinsfile will be updated to add the “execute ansible playbook” stage. The pipeline will then be executed, validated,            and optimized
+        <img width="975" height="299" alt="image" src="https://github.com/user-attachments/assets/15218c41-67cb-4956-a72c-1c7c343f1cac" />
+
+
       
 
 
