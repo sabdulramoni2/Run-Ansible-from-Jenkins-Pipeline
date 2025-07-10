@@ -117,7 +117,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
         m = the file extension
         P = old passphrase
         N = new passphrase
-        When prompted for the new passphrase, leave it empty by pressing Enter. When prompted to reenter the passphrase, press Enter again. The following output will display:    
+  When prompted for the new passphrase, leave it empty by pressing Enter. When prompted to reenter the passphrase, press Enter again. The following output will display:    
 
 
     ![image](https://github.com/user-attachments/assets/a8215ced-397d-48b6-925a-d41624d66e6a)
