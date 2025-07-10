@@ -115,10 +115,9 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 -  Where:
      - f = path to the private key
      - m = the file extension
-          -  f = path to the private key
-        -  m = the file extension
-        P = old passphrase
-        N = new passphrase
+     - P = old passphrase
+     - N = new passphrase
+          
 - When prompted for the new passphrase, leave it empty by pressing Enter. When prompted to reenter the passphrase, press Enter again. The following output will display:    
 
 
