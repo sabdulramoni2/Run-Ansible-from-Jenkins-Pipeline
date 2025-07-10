@@ -206,6 +206,21 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
              ```
 
          -  In the script block, display output to the user that the Ansible Playbook is being called to configure the EC2 instances:
+             ```
+                  echo "calling ansible playbook to configure ec2 instances"
+             ```
+
+        - Open the following webpage in a web browser: https://plugins.jenkins.io/ssh-steps/. Scroll down to the withCredentials example in the Examples section. Copy the following code to the clipboard
+       
+          <img width="577" height="255" alt="image" src="https://github.com/user-attachments/assets/d1dd70c1-626a-4406-a0da-917b041149ab" />
+
+          The changes are summarized as follows
+            ```
+                def remote = [:]
+                remote.name = "ansible-server"
+                remote.host = "x.x.x.x"
+                remote.allowAnyHosts = true
+            ```
 
 
       
