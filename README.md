@@ -338,23 +338,25 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
 
 
       - Bash Script: Prepare-Ansible-Server.sh
-            - The purpose of this section is to automate sections II.A.i.b and II.A.i.c so that Ansible and Python's boto3 and botocore packages can be installed non-interactively. This is useful if installing on a fresh Ansible server in a Jenkins pipeline
+            - The purpose of this section is to automate sections so that Ansible and Python's boto3 and botocore packages can be installed non-interactively. This is useful if installing on a fresh Ansible server in a Jenkins pipeline
               Restore the ansible-jenkins project in Microsoft Visual Studio Code. At the root of the project folder, create a new bash script called prepare-ansible-server.sh.
             - Add a shebang at the top of the prepare-ansible-server.sh file to notify the code editor this is the start of a bash script.
+        
               ```
-                  #!/usr/bin/env bash
+                    #!/usr/bin/env bash
               ```
             - Add the following apt commands to install Ansible, pip3, and boto3 and botocore Python packages.  The -y flag confirms the desire to proceed with the installation without manual intervention.
+        
               ```
-                  #!/usr/bin/env bash
-
-                  apt update
-                  apt install ansible -y
-                  apt install python3-pip -y
-                  apt install python3-boto3
-                  apt install python3-botocore
+                    #!/usr/bin/env bash
+                    apt update
+                    apt install ansible -y
+                    apt install python3-pip -y
+                    apt install python3-boto3
+                    apt install python3-botocore
               ```
             - Open the Jenkinsfile. In the “execute ansible playbook” stage, locate the withCredentials block. Add the following line above sshCommand:
+        
               ```
                     sshScript remote: remote, script: "prepare-ansible-server.sh"
               ```
