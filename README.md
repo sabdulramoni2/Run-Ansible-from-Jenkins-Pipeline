@@ -214,7 +214,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
        
           <img width="577" height="255" alt="image" src="https://github.com/user-attachments/assets/d1dd70c1-626a-4406-a0da-917b041149ab" />
 
-          The changes are summarized as follows
+       -  The changes are summarized as follows
             ```
                 def remote = [:]
                 remote.name = "ansible-server"
@@ -222,12 +222,20 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
                 remote.allowAnyHosts = true
             ```
 
+        - Enter a couple carriage returns. Still in the script block, use the withCredentials plugin again. For efficiency and to ensure there are no syntactical errors, copy the following line from the “copy files to ansible server” stage.
+            ```
+                   withCredentials([sshUserPrivateKey(credentialsId: 'ec2-server-key', keyFileVariable: 'keyfile', usernameVariable: 'user')]) {
+ 
+                   }
+            ```
 
-      
+          Change the credentialsId value to ‘ansible-server-key.’
+          
+       - Refer back to the official Jenkins documentation on using the SSH Pipeline Steps plugin (https://plugins.jenkins.io/ssh-steps/). Notice the user and identityFile keys in the Remote section of Configuration
+          
 
+          <img width="522" height="635" alt="image" src="https://github.com/user-attachments/assets/c916341a-aedf-42d4-8f04-552884ffdc0a" />
 
-
-      
 
 
 
