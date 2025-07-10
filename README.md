@@ -157,6 +157,10 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
    - Notice the security warning below:
      <img width="975" height="424" alt="image" src="https://github.com/user-attachments/assets/9b538646-4e7c-4f14-8fac-ec3809144856" />
      <img width="975" height="72" alt="image" src="https://github.com/user-attachments/assets/4e2dffcf-02cd-474f-933e-54135c7960d0" />
+     <img width="975" height="298" alt="image" src="https://github.com/user-attachments/assets/8ecaaffa-eaf7-4b93-ac37-47be4ec575e8" />
+   - In Jenkinsfile, the security issue from Step 5 pertains to the syntax used with the keyFileVariable (keyfile) in the withCredentials block. The use of double quotes and curvy brackets will mistakenly let the Groovy interpreter reveal the keyfile secret in the          command line history.
+   - To fix this, open Microsoft Visual Studio Code and restore the Jenkinsfile in the ansible-jenkins project. Modify the scp command in the withCredentials block by using single quotes and removing the curvy brackets as shown below:
+
 
 
 
