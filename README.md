@@ -337,7 +337,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
            <img width="975" height="576" alt="image" src="https://github.com/user-attachments/assets/04cf0479-26be-4b06-ba9f-1a730cb7cfea" />
 
 
-    - Bash Script: Prepare-Ansible-Server.sh
+      - Bash Script: Prepare-Ansible-Server.sh
         The purpose of this section is to automate sections so that Ansible and Python's boto3 and botocore packages can be installed non-interactively. This is useful if installing on a fresh Ansible server in a Jenkins pipeline
         Restore the ansible-jenkins project in Microsoft Visual Studio Code. At the root of the project folder, create a new bash script called prepare-ansible-server.sh.
             - Add a shebang at the top of the prepare-ansible-server.sh file to notify the code editor this is the start of a bash script.
