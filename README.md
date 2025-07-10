@@ -337,4 +337,41 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
            <img width="975" height="576" alt="image" src="https://github.com/user-attachments/assets/04cf0479-26be-4b06-ba9f-1a730cb7cfea" />
 
 
+      - Bash Script: Prepare-Ansible-Server.sh
+            - The purpose of this section is to automate sections II.A.i.b and II.A.i.c so that Ansible and Python's boto3 and botocore packages can be installed non-interactively. This is useful if installing on a fresh Ansible server in a Jenkins pipeline
+              Restore the ansible-jenkins project in Microsoft Visual Studio Code. At the root of the project folder, create a new bash script called prepare-ansible-server.sh.
+            - Add a shebang at the top of the prepare-ansible-server.sh file to notify the code editor this is the start of a bash script.
+              ```
+                  #!/usr/bin/env bash
+              ```
+            - Add the following apt commands to install Ansible, pip3, and boto3 and botocore Python packages.  The -y flag confirms the desire to proceed with the installation without manual intervention.
+              ```
+                  #!/usr/bin/env bash
+
+                  apt update
+                  apt install ansible -y
+                  apt install python3-pip -y
+                  apt install python3-boto3
+                  apt install python3-botocore
+              ```
+            - Open the Jenkinsfile. In the “execute ansible playbook” stage, locate the withCredentials block. Add the following line above sshCommand:
+              ```
+                    sshScript remote: remote, script: "prepare-ansible-server.sh"
+              ```
+            - In the terminal pane of Microsoft Visual Studio Code, use the git command to add the changes, specify a commit message, and push to the GitHub repository.
+              ```
+                  git add .
+                  git commit -m "Add Ansible server script optional step"
+                  git push
+              ```
+            - Return to the Jenkins management UI. Rerun the ansible-pipeline job and confirm the build is successful.
+              <img width="975" height="581" alt="image" src="https://github.com/user-attachments/assets/08be7c03-ac34-4197-8c7d-14ab58a153ed" />
+
+            - On the Console Output screen, review the console output. Notice the output shows that ansible, pip3, and the boto3 and botocore packages are already the latest versions
+              <img width="975" height="384" alt="image" src="https://github.com/user-attachments/assets/1d37fd47-f26e-4b1d-a574-ba47f04e92ef" />
+              <img width="975" height="441" alt="image" src="https://github.com/user-attachments/assets/c3d651ea-9812-4604-9ea1-f06f40040720" />
+
+
+              
+
 
