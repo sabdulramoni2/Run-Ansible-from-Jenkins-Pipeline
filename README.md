@@ -166,7 +166,7 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
      ```
 
 
-   - Open a terminal inside Microsoft Visual Studio code. Use the git command to add the changes, add a commit message, and push to the GitLab repository
+   - Open a terminal inside Microsoft Visual Studio code. Use the git command to add the changes, add a commit message, and push to the GiHub repository
 
 
     ```
@@ -266,13 +266,25 @@ This project demonstrates how to execute ansible playbook from a jenkins pipelin
                    git push
           ```
 
+  - Jenkins Pipeline Execution
+      - This section reruns the Jenkins pipeline with the addition of the "execute ansible playbook" stage.
+      - Return to the Jenkins management UI and rerun the ansible-pipeline job. Confirm the build is successful:
 
+        <img width="975" height="507" alt="image" src="https://github.com/user-attachments/assets/a68290fb-3bd5-418f-875f-2a8e935dde83" />
+      - Restore the Jenkinsfile in the ansible-jenkins project. In the withCredentials block, modify the sshCommand by replacing the ls -l command with the ansible-playbook command. This command will run the Ansible playbook.
+        ```
+               sshCommand remote: remote, command: "ansible-playbook my-playbook.yaml"
+        ```
+        <img width="975" height="264" alt="image" src="https://github.com/user-attachments/assets/13b28ad5-7df9-44ed-85e2-ecbc285b03e6" />
+        
+      - In the terminal pane of Microsoft Visual Studio Code, use the git command to add the changes, specify a commit message, and push to the Gitlab repository.
+        ```
+               git add .
+               git commit -m "Execute ansible command remotely"
+               git push
+        ```
 
-
-
-  
-
-
+        
 
 
 
