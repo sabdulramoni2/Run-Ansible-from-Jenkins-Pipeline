@@ -1,8 +1,7 @@
 ﻿# **Run Ansible from Jenkins Pipeline**
 
 ## **Project Overview**
-This project demonstrates how to execute ansible playbook from a jenkins pipeline.
-
+Deploy a Jenkins CI/CD pipeline with stages to copy files to an Ansible server and execute an Ansible playbook.
 ---
   
 ## **Feature**
